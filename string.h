@@ -11,13 +11,13 @@ class String{
         ~String();
         const String& operator=(const String& rhs);
         String& operator=(String&& rhs) noexcept;
-        size_t size();
+        size_t size() const;
         const char* c_str() const;
         String& append (const String& str);
         String& append (const char* s);
-        char& at(size_t pos);
-        char& back();
-        char& front();
+        char& at(size_t pos) const;
+        char& back() const;
+        char& front() const;
         void clear();
         bool empty() const noexcept;
 

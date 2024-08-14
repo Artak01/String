@@ -65,7 +65,8 @@ String& String::operator=(String&& rhs) noexcept
     return *this;
 }
 
-size_t String::size(){
+size_t String::size() const
+{
     size_t size = strlen(m_arr) + 1;
     return size;
 }
@@ -117,21 +118,24 @@ String& String::append (const char* s){
     return *this;
 }
 
-char& String::at(size_t pos){
+char& String::at(size_t pos) const
+{
     if (pos < 0 || pos >= m_size){
         throw std::invalid_argument("Invalind index!");
     }
     return m_arr[pos];
 }
 
-char& String::back(){
+char& String::back() const
+{
     if(m_size == 0){
         throw std::invalid_argument("Error!");
     }
     return m_arr[m_size - 1];
 }
 
-char& String::front(){
+char& String::front() const
+{
     if(m_size == 0){
         throw std::invalid_argument("Error!");
     }
